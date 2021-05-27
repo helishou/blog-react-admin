@@ -21,16 +21,16 @@ export default [
       { path: '/', redirect: '/user/login' },
       // { path: '/', redirect: '/dashboard/workplace' },
       {
-        path: '/dashboard',
-        name: 'dashboard',
+        path: '/welcome',
+        name: 'welcome',
         icon: 'dashboard',
-        routes: [
-          {
-            path: '/dashboard/workplace',
-            name: 'workplace',
-            component: './Dashboard/Workplace',
-          },
-        ],
+        // routes: [
+        //   {
+        //     path: '/dashboard/workplace',
+        //     // name: 'welcome',
+            component: './Welcome',
+          // },
+        // ],
       },
       {
         path: '/otherUser',

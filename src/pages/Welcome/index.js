@@ -2,31 +2,33 @@ import React, { PureComponent } from 'react';
 import moment from 'moment';
 import { connect } from 'dva';
 import { Row, Col, List, Avatar } from 'antd';
-
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
-import styles from './Workplace.less';
+import styles from './Welcome.less';
 
-@connect(({ user,activities, loading }) => ({
+@connect(({ user, activities, loading }) => ({
   currentUser: user.currentUser,
   activities,
   currentUserLoading: loading.effects['user/fetchCurrent'],
 }))
-
-
-class Workplace extends PureComponent {
+class Welecome extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
       type: 'user/fetchCurrent',
     });
+    this.image = this.getImage();
     // dispatch({
     //   type: 'activities/fetchList',
     // });
   }
 
-  componentWillUnmount() {
-  }
+  componentWillUnmount() {}
+
+  getImage = () => {
+    const number = Math.ceil(Math.random() * 697);
+    return `http://cdn.jsdelivr.net/gh/uxiaohan/GitImgTypecho/Acg/api.vvhan.com[${number}].jpg`;
+  };
 
   renderActivities() {
     const {
@@ -66,10 +68,7 @@ class Workplace extends PureComponent {
   }
 
   render() {
-    const {
-      currentUser,
-      currentUserLoading,
-    } = this.props;
+    const { currentUser, currentUserLoading } = this.props;
 
     const pageHeaderContent =
       currentUser && Object.keys(currentUser).length ? (
@@ -93,17 +92,15 @@ class Workplace extends PureComponent {
     const extraContent = (
       <div className={styles.extraContent}>
         <div className={styles.statItem}>
-          <p>项目数</p>
+          <p>文章数</p>
           <p>56</p>
         </div>
         <div className={styles.statItem}>
-          <p>团队内排名</p>
-          <p>
-            8<span> / 24</span>
-          </p>
+          <p>注册用户</p>
+          <p>2</p>
         </div>
         <div className={styles.statItem}>
-          <p>项目访问</p>
+          <p>网站访问</p>
           <p>2,223</p>
         </div>
       </div>
@@ -115,12 +112,30 @@ class Workplace extends PureComponent {
         content={pageHeaderContent}
         extraContent={extraContent}
       >
-        <Row gutter={24}>
-          <Col xl={16} lg={24} md={24} sm={24} xs={24}>内容</Col>
-        </Row>
+        <div
+          style={{
+            position: 'relative',
+            maxHeight: '400px',
+            maxWidth: '1000px',
+            boxShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)',
+            overflow: 'hidden',
+            borderRadius: '10px',
+            margin: '0 auto',
+          }}
+        >
+          <img
+            style={{
+              height: '100%',
+              width: '100%',
+              objectFit: 'cover',
+            }}
+            src={this.image}
+            alt="随机图片"
+          />
+        </div>
       </PageHeaderWrapper>
     );
   }
 }
 
-export default Workplace;
+export default Welecome;

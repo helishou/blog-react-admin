@@ -49,7 +49,7 @@ export default {
                 }
                 console.log('redirect :', redirect);
 
-                yield put(routerRedux.replace(redirect || '/dashboard/workplace'));
+                yield put(routerRedux.replace(redirect || '/welcome'));
             }
         },
 
