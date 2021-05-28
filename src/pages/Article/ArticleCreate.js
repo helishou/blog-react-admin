@@ -23,7 +23,7 @@ class ArticleCreate extends React.Component {
       pageSize: 50,
       changeType: false,
       title: '',
-      author: 'biaochenxuying',
+      author: 'helishou',
       keyword: '',
       content: '',
       desc: '',
@@ -96,7 +96,7 @@ class ArticleCreate extends React.Component {
       });
       return;
     }
-    let {keyword} = this.state;
+    let { keyword } = this.state;
     if (keyword instanceof Array) {
       keyword = keyword.join(',');
     }
@@ -136,7 +136,7 @@ class ArticleCreate extends React.Component {
             visible: false,
             changeType: false,
             title: '',
-            author: 'biaochenxuying',
+            author: 'helishou',
             keyword: '',
             content: '',
             desc: '',

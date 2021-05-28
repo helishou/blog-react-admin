@@ -15,7 +15,7 @@ export default [
     path: '/',
     component: '../layouts/BasicLayout',
     Routes: ['src/pages/Authorized'],
-    authority: ['admin', 'user', 'xuying', 'biaochenxuying','baozishu','helishou'],
+    authority: ['admin', 'user', 'baozishu', 'helishou'],
     routes: [
       // dashboard
       { path: '/', redirect: '/user/login' },
@@ -28,8 +28,8 @@ export default [
         //   {
         //     path: '/dashboard/workplace',
         //     // name: 'welcome',
-            component: './Welcome',
-          // },
+        component: './Welcome',
+        // },
         // ],
       },
       {
@@ -65,73 +65,73 @@ export default [
         path: '/message',
         name: 'message',
         icon: 'message',
-        routes: [
-          {
-            path: '/message/list',
-            name: 'list',
-            component: './Message/List',
-          },
-        ],
+        // routes: [
+        //   {
+        //     path: '/message/list',
+        //     name: 'list',
+        component: './Message/List',
+        // },
+        // ],
       },
       {
         path: '/tag',
         name: 'tag',
         icon: 'tags',
-        routes: [
-          {
-            path: '/tag/list',
-            name: 'list',
-            component: './Tag/List',
-          },
-        ],
+        // routes: [
+        //   {
+        //     path: '/tag/list',
+        //     name: 'list',
+        component: './Tag/List',
+        //   },
+        // ],
       },
       {
         path: '/link',
         name: 'link',
         icon: 'link',
-        routes: [
-          {
-            path: '/link/list',
-            name: 'list',
-            component: './Link/List',
-          },
-        ],
+        // routes: [
+        //   {
+        // path: '/link/list',
+        // name: 'list',
+        component: './Link/List',
+        //   },
+        // ],
       },
       {
         path: '/category',
         name: 'category',
         icon: 'book',
-        routes: [
-          {
-            path: '/category/list',
-            name: 'list',
-            component: './Category/List',
-          },
-        ],
+        // routes: [
+        //   {
+        // path: '/category/list',
+        // name: 'list',
+        component: './Category/List',
+        //   },
+        // ],
       },
-      {
-        path: '/timeAxis',
-        name: 'timeAxis',
-        icon: 'clock-circle',
-        routes: [
-          {
-            path: '/timeAxis/list',
-            name: 'list',
-            component: './TimeAxis/List',
-          },
-        ],
-      },
+      // {
+      //   path: '/timeAxis',
+      //   name: 'timeAxis',
+      //   icon: 'clock-circle',
+      //   routes: [
+      //     {
+      //       path: '/timeAxis/list',
+      //       name: 'list',
+      //       component: './TimeAxis/List',
+      //     },
+      //   ],
+      // },
       {
         path: '/project',
         name: 'project',
         icon: 'clock-circle',
-        routes: [
-          {
-            path: '/project/list',
-            name: 'list',
-            component: './Project/List',
-          },
-        ],
+        // routes: [
+        //   {
+        //     path: '/project/list',
+        //     name: 'list',
+        component: './Project/List',
+        //   },
+        // ],
       },
       {
         name: 'exception',
@@ -165,28 +165,28 @@ export default [
       {
         name: 'account',
         icon: 'user',
-        path: '/account',
+        // path: '/account',
+        // routes: [
+        //   {
+        path: '/account/settings',
+        name: 'settings',
+        component: './Account/Settings/Info',
         routes: [
           {
             path: '/account/settings',
-            name: 'settings',
-            component: './Account/Settings/Info',
-            routes: [
-              {
-                path: '/account/settings',
-                redirect: '/account/settings/base',
-              },
-              {
-                path: '/account/settings/base',
-                component: './Account/Settings/BaseView',
-              },
-              {
-                path: '/account/settings/personalLink',
-                component: './Account/Settings/PersonalLinkView',
-              },
-            ],
+            redirect: '/account/settings/base',
+          },
+          {
+            path: '/account/settings/base',
+            component: './Account/Settings/BaseView',
+          },
+          {
+            path: '/account/settings/personalLink',
+            component: './Account/Settings/PersonalLinkView',
           },
         ],
+        //   },
+        // ],
       },
       {
         component: '404',

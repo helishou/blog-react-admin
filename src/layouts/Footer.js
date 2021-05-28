@@ -10,13 +10,13 @@ const FooterView = () => (
         {
           key: 'Pro 首页',
           title: 'Pro 首页',
-          href: 'https://github.com/biaochenxuying/blog-react',
+          href: 'https://github.com/helishou/blog-react',
           blankTarget: true,
         },
         {
           key: 'github',
           title: <Icon type="github" />,
-          href: 'https://github.com/biaochenxuying/blog-react-admin',
+          href: 'https://github.com/helishou/blog-react-admin',
           blankTarget: true,
         },
         {
@@ -28,7 +28,7 @@ const FooterView = () => (
       ]}
       copyright={
         <Fragment>
-          Copyright <Icon type="copyright" /> BiaoChenXuYing
+          Copyright <Icon type="copyright" /> helishou
         </Fragment>
       }
     />

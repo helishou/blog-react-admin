@@ -10,13 +10,12 @@ import {
 
 export default {
   namespace: 'article',
-
   state: {
     articleList: [],
     total: 0,
     articleDetail: {
       _id: '',
-      author: 'biaochenxuying',
+      author: '河狸兽',
       category: [],
       comments: [],
       create_time: '',

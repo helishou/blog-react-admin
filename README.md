@@ -90,7 +90,7 @@ npm start
 npm run build 
 ```
 
-如果要看完整的效果，是要和后台项目  **[blog-node](https://github.com/biaochenxuying/blog-node)** 一起运行才行的，不然接口请求会失败。
+如果要看完整的效果，是要和后台项目  **[blog-node](https://github.com/helishou/blog-node)** 一起运行才行的，不然接口请求会失败。
 
 
 ## 项目常见问题
@@ -124,12 +124,12 @@ http://127.0.0.1:3000/register
 - 2. param
 ```
 {
- "name": "BiaoChenXuYing",
+ "name": "helishou",
  "password": "888888",
  "email": "admin@qq.com",
  "phone": 1380013800,
  "type": 0,
- "introduce":"加班到天明，学习到昏厥!!! 微信公众号：【 BiaoChenXuYing 】，分享 WEB 全栈开发等相关的技术文章，热点资源，全栈程序员的成长之路。"
+ "introduce":"加班到天明，学习到昏厥!!! 微信公众号：【 helishou 】，分享 WEB 全栈开发等相关的技术文章，热点资源，全栈程序员的成长之路。"
 }
 ```
 这里的 type 为 0 是管理员账号，为 1 时，是普通用户。
@@ -154,26 +154,26 @@ https://pro.ant.design/docs/authority-management-cn
 
 **项目地址：**
 
-> [前台展示: https://github.com/biaochenxuying/blog-react](https://github.com/biaochenxuying/blog-react)
+> [前台展示: https://github.com/helishou/blog-react](https://github.com/helishou/blog-react)
 
-> [前台展示: https://github.com/biaochenxuying/blog-vue-typescript](https://github.com/biaochenxuying/blog-vue-typescript)
+> [前台展示: https://github.com/helishou/blog-vue-typescript](https://github.com/helishou/blog-vue-typescript)
 
-> [管理后台：https://github.com/biaochenxuying/blog-react-admin](https://github.com/biaochenxuying/blog-react-admin)
+> [管理后台：https://github.com/helishou/blog-react-admin](https://github.com/helishou/blog-react-admin)
 
-> [后端：https://github.com/biaochenxuying/blog-node](https://github.com/biaochenxuying/blog-node)
+> [后端：https://github.com/helishou/blog-node](https://github.com/helishou/blog-node)
 
-> [blog：https://github.com/biaochenxuying/blog](https://github.com/biaochenxuying/blog)
+> [blog：https://github.com/helishou/blog](https://github.com/helishou/blog)
 
 **本博客系统的系列文章：**
 
-- 1. [react + node + express + ant + mongodb 的简洁兼时尚的博客网站](https://biaochenxuying.cn/articleDetail?article_id=5bf57a8f85e0f13af26e579b)
-- 2. [react + Ant Design + 支持 markdown 的 blog-react 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf6bb5e85e0f13af26e57b7)
-- 3. [基于 node + express + mongodb 的 blog-node 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf8c57185e0f13af26e7d0d)
-- 4. [服务器小白的我,是如何将 node+mongodb 项目部署在服务器上并进行性能优化的](https://biaochenxuying.cn/articleDetail?article_id=5bfa728bb54f044b4f9da240)
-- 5. [github 授权登录教程与如何设计第三方授权登录的用户表](https://biaochenxuying.cn/articleDetail?article_id=5c7bd34e42b55e2ecc90976d)
-- 6. [一次网站的性能优化之路 -- 天下武功，唯快不破](https://biaochenxuying.cn/articleDetail?article_id=5c8ca2d3b87b8a04f1860c9a)
-- 7. [Vue + TypeScript + Element 搭建简洁时尚的博客网站及踩坑记](https://biaochenxuying.cn/articleDetail?article_id=5c9d8ce5f181945ddd6b0ffc)
-- 8. [前端解决第三方图片防盗链的办法 - html referrer 访问图片资源403问题](https://biaochenxuying.cn/articleDetail?article_id=5cfcc6798090bd3c84138a08)
+- 1. [react + node + express + ant + mongodb 的简洁兼时尚的博客网站](https://helishou.cn/articleDetail?article_id=5bf57a8f85e0f13af26e579b)
+- 2. [react + Ant Design + 支持 markdown 的 blog-react 项目文档说明](https://helishou.cn/articleDetail?article_id=5bf6bb5e85e0f13af26e57b7)
+- 3. [基于 node + express + mongodb 的 blog-node 项目文档说明](https://helishou.cn/articleDetail?article_id=5bf8c57185e0f13af26e7d0d)
+- 4. [服务器小白的我,是如何将 node+mongodb 项目部署在服务器上并进行性能优化的](https://helishou.cn/articleDetail?article_id=5bfa728bb54f044b4f9da240)
+- 5. [github 授权登录教程与如何设计第三方授权登录的用户表](https://helishou.cn/articleDetail?article_id=5c7bd34e42b55e2ecc90976d)
+- 6. [一次网站的性能优化之路 -- 天下武功，唯快不破](https://helishou.cn/articleDetail?article_id=5c8ca2d3b87b8a04f1860c9a)
+- 7. [Vue + TypeScript + Element 搭建简洁时尚的博客网站及踩坑记](https://helishou.cn/articleDetail?article_id=5c9d8ce5f181945ddd6b0ffc)
+- 8. [前端解决第三方图片防盗链的办法 - html referrer 访问图片资源403问题](https://helishou.cn/articleDetail?article_id=5cfcc6798090bd3c84138a08)
 
 
 ## 服务器
@@ -188,11 +188,11 @@ https://pro.ant.design/docs/authority-management-cn
 
 特别是大三和大四的学生，买了服务器，搭建个项目给面试官看也香，对找工作和面试都加分，还可以熟悉技术栈。
 
-[想学得快，就得有自己的服务器来折腾才行（低于 1 折、89/年、229/3年，比学生机还便宜）](https://biaochenxuying.cn/articleDetail?article_id=5de65dd90283dc742f8f633a)
+[想学得快，就得有自己的服务器来折腾才行（低于 1 折、89/年、229/3年，比学生机还便宜）](https://helishou.cn/articleDetail?article_id=5de65dd90283dc742f8f633a)
 
 比如笔者的两个网站：
 
-> https://biaochenxuying.cn/
+> https://helishou.cn/
 
 > https://www.kwgg2020.com/
 

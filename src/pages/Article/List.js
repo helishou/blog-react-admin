@@ -34,7 +34,7 @@ class TableList extends PureComponent {
     this.state = {
       changeType: false,
       title: '',
-      author: 'biaochenxuying',
+      author: 'helishou',
       keyword: '',
       content: '',
       desc: '',
@@ -134,7 +134,7 @@ class TableList extends PureComponent {
           render: comments => {
             // console.log('comments',comments)
             let flag = 1;
-            let length = comments.length;
+            const { length } = comments;
             if (length) {
               for (let i = 0; i < length; i++) {
                 flag = comments[i].is_handle;
@@ -192,7 +192,11 @@ class TableList extends PureComponent {
               </Fragment>
               <Divider type="vertical" />
               <Fragment>
-                <a href={`${domain}articleDetail?article_id=${record._id}`} target="_blank">
+                <a
+                  href={`${domain}articleDetail?article_id=${record._id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   详情
                 </a>
               </Fragment>
@@ -263,7 +267,7 @@ class TableList extends PureComponent {
       loading: true,
     });
 
-    let keyword = this.state.keyword;
+    let { keyword } = this.state;
     if (keyword instanceof Array) {
       keyword = keyword.join(',');
     }
@@ -299,7 +303,7 @@ class TableList extends PureComponent {
             visible: false,
             changeType: false,
             title: '',
-            author: 'biaochenxuying',
+            author: 'helishou',
             keyword: '',
             content: '',
             desc: '',
@@ -564,7 +568,7 @@ class TableList extends PureComponent {
         visible: true,
         changeType: false,
         title: '',
-        author: 'biaochenxuying',
+        author: 'helishou',
         keyword: '',
         content: '',
         desc: '',
@@ -587,6 +591,7 @@ class TableList extends PureComponent {
       visible: false,
     });
   };
+
   handleCommentsCancel = e => {
     this.setState({
       commentsVisible: false,

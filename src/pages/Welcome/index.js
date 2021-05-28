@@ -27,7 +27,7 @@ class Welecome extends PureComponent {
 
   getImage = () => {
     const number = Math.ceil(Math.random() * 697);
-    return `http://cdn.jsdelivr.net/gh/uxiaohan/GitImgTypecho/Acg/api.vvhan.com[${number}].jpg`;
+    return `http://cdn.jsdelivr.net/gh/uxiaohan/GitImgTypecho/Acg/api.vvhan.com[${number}].jpg?s=1920*1080`;
   };
 
   renderActivities() {
@@ -125,8 +125,8 @@ class Welecome extends PureComponent {
         >
           <img
             style={{
-              height: '100%',
-              width: '100%',
+              height: '400px',
+              width: '1000px',
               objectFit: 'cover',
             }}
             src={this.image}
