@@ -215,7 +215,7 @@ class ArticleCreate extends React.Component {
 
   handleTagChange(value) {
     const tags = value.join();
-    console.log('tags :', tags);
+    // console.log('tags :', tags);
     this.setState({
       tagsDefault: value,
       tags,

@@ -407,7 +407,7 @@ class TableList extends PureComponent {
   }
 
   handleChangeType(value) {
-    console.log('type :', value);
+    // console.log('type :', value);
     this.setState({
       type: value,
     });
@@ -415,7 +415,7 @@ class TableList extends PureComponent {
 
   handleTagChange(value) {
     const tags = value.join();
-    console.log('tags :', tags);
+    // console.log('tags :', tags);
     this.setState({
       tagsDefault: value,
       tags,
@@ -424,7 +424,7 @@ class TableList extends PureComponent {
 
   handleCategoryChange(value) {
     const category = value.join();
-    console.log('category :', category);
+    // console.log('category :', category);
     this.setState({
       categoryDefault: value,
       category,
