@@ -21,9 +21,8 @@ class ArticleCreate extends React.Component {
       keywordCom: '',
       pageNum: 1,
       pageSize: 50,
-      changeType: false,
       title: '',
-      author: 'helishou',
+      author: '河狸兽',
       keyword: '',
       content: '',
       desc: '',
@@ -103,99 +102,45 @@ class ArticleCreate extends React.Component {
     this.setState({
       loading: true,
     });
-    // 修改
-    if (this.state.changeType) {
-      const params = {
-        id: articleDetail._id,
-        title: this.state.title,
-        author: this.state.author,
-        desc: this.state.desc,
-        keyword,
-        content: this.state.content,
-        img_url: this.state.img_url,
-        origin: this.state.origin,
-        state: this.state.state,
-        type: this.state.type,
-        tags: this.state.tags,
-        category: this.state.category,
-      };
-      new Promise(resolve => {
-        dispatch({
-          type: 'article/updateArticle',
-          payload: {
-            resolve,
-            params,
-          },
-        });
-      }).then(res => {
-        if (res.code === 0) {
-          notification.success({
-            message: res.message,
-          });
-          this.setState({
-            visible: false,
-            changeType: false,
-            title: '',
-            author: 'helishou',
-            keyword: '',
-            content: '',
-            desc: '',
-            img_url: '',
-            origin: 0, // 0 原创，1 转载，2 混合
-            state: 1, // 文章发布状态 => 0 草稿，1 已发布
-            type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
-            tags: '',
-            category: '',
-            tagsDefault: [],
-            categoryDefault: [],
-          });
-          this.handleSearch(this.state.pageNum, this.state.pageSize);
-        } else {
-          notification.error({
-            message: res.message,
-          });
-        }
+    // 添加
+    const params = {
+      title: this.state.title,
+      author: this.state.author,
+      desc: this.state.desc,
+      keyword: this.state.keyword,
+      content: this.state.smde.value(),
+      img_url: this.state.img_url,
+      origin: this.state.origin,
+      state: this.state.state,
+      type: this.state.type,
+      tags: this.state.tags,
+      category: this.state.category,
+    };
+    new Promise(resolve => {
+      dispatch({
+        type: 'article/addArticle',
+        payload: {
+          resolve,
+          params,
+        },
       });
-    } else {
-      // 添加
-      const params = {
-        title: this.state.title,
-        author: this.state.author,
-        desc: this.state.desc,
-        keyword: this.state.keyword,
-        content: this.state.smde.value(),
-        img_url: this.state.img_url,
-        origin: this.state.origin,
-        state: this.state.state,
-        type: this.state.type,
-        tags: this.state.tags,
-        category: this.state.category,
-      };
-      new Promise(resolve => {
-        dispatch({
-          type: 'article/addArticle',
-          payload: {
-            resolve,
-            params,
-          },
+    }).then(res => {
+      if (res.code === 0) {
+        notification.success({
+          message: res.message,
         });
-      }).then(res => {
-        if (res.code === 0) {
-          notification.success({
-            message: res.message,
-          });
-          this.setState({
-            loading: false,
-            chnageType: false,
-          });
-          // this.handleSearch(this.state.pageNum, this.state.pageSize);
-        } else {
-          notification.error({
-            message: res.message,
-          });
-        }
-      });
-    }
+        this.setState({
+          loading: false,
+          chnageType: false,
+        });
+        this.props.history.push("/article/list");
+        // this.handleSearch(this.state.pageNum, this.state.pageSize);
+      } else {
+        notification.error({
+          message: res.message,
+        });
+      }
+    });
   }
 
   getSmdeValue() {

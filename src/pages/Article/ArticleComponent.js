@@ -110,26 +110,26 @@ class ArticleComponent extends React.Component {
         </Select.Option>
       );
     }
-    const { articleDetail } = this.props.article;
     const { changeType } = this.props;
-    let originDefault = '原创';
-    let stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    let typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
-    let categoryDefault = [];
-    let tagsDefault = [];
-    if (changeType) {
-      originDefault = articleDetail.origin === 0 ? '原创' : '';
-      stateDefault = articleDetail.state ? '已发布' : '草稿';
-      typeDefault =
-        articleDetail.type === 1 ? '普通文章' : articleDetail.type === 2 ? '简历' : '管理员介绍';
-      categoryDefault = this.props.categoryDefault;
-      tagsDefault = this.props.tagsDefault;
-    } else {
-      originDefault = '原创';
-      stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-      categoryDefault = [];
-      tagsDefault = [];
-    }
+    console.log('render', this.props);
+    // let originDefault = '原创';
+    // let stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
+    // let typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+    // let categoryDefault = [];
+    // let tagsDefault = [];
+    // if (changeType) {
+    //   originDefault = this.props.origin === 0 ? '原创' : '';
+    //   stateDefault = this.props.state ? '已发布' : '草稿';
+    //   typeDefault =
+    //     this.props.type === 1 ? '普通文章' : this.props.type === 2 ? '简历' : '管理员介绍';
+    //   categoryDefault = this.props.categoryDefault;
+    //   tagsDefault = this.props.tagsDefault;
+    // } else {
+    //   originDefault = '原创';
+    //   stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
+    //   categoryDefault = [];
+    //   tagsDefault = [];
+    // }
     // console.log('originDefault :', originDefault)
     // console.log('stateDefault :', stateDefault)
     // console.log('categoryDefault :', categoryDefault)
@@ -197,7 +197,7 @@ class ArticleComponent extends React.Component {
           <Select
             style={{ width: 200, marginTop: 20, marginBottom: 20 }}
             placeholder="选择发布状态"
-            defaultValue={stateDefault}
+            value={String(this.props.state)}
             onChange={this.props.handleChangeState}
           >
             {/*  0 草稿，1 发布 */}
@@ -208,7 +208,7 @@ class ArticleComponent extends React.Component {
           <Select
             style={{ width: 200, marginTop: 20, marginBottom: 20 }}
             placeholder="选择文章类型"
-            defaultValue={typeDefault}
+            value={String(this.props.type)}
             onChange={this.props.handleChangeType}
           >
             {/* 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍 */}
@@ -220,7 +220,7 @@ class ArticleComponent extends React.Component {
           <Select
             style={{ width: 200, marginTop: 20, marginLeft: 10, marginBottom: 20 }}
             placeholder="选择文章转载状态"
-            defaultValue={originDefault}
+            value={String(this.props.origin)}
             onChange={this.props.handleChangeOrigin}
           >
             {/* 0 原创，1 转载，2 混合 */}
@@ -234,7 +234,6 @@ class ArticleComponent extends React.Component {
             mode="multiple"
             style={{ width: 200, marginTop: 20, marginLeft: 10, marginBottom: 20 }}
             placeholder="标签"
-            defaultValue={tagsDefault}
             value={this.props.tagsDefault}
             onChange={this.props.handleTagChange}
           >
@@ -245,7 +244,6 @@ class ArticleComponent extends React.Component {
             mode="multiple"
             style={{ width: 200, marginTop: 20, marginLeft: 10, marginBottom: 20 }}
             placeholder="文章分类"
-            defaultValue={categoryDefault}
             value={this.props.categoryDefault}
             onChange={this.props.handleCategoryChange}
           >

@@ -34,7 +34,7 @@ class TableList extends PureComponent {
     this.state = {
       changeType: false,
       title: '',
-      author: 'helishou',
+      author: '河狸兽',
       keyword: '',
       content: '',
       desc: '',
@@ -202,7 +202,7 @@ class TableList extends PureComponent {
               </Fragment>
               <Divider type="vertical" />
               <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(text, record)}>
-                <a href="javascript:;">Delete</a>
+                <a href="#!">删除</a>
               </Popconfirm>
             </div>
           ),
@@ -352,7 +352,20 @@ class TableList extends PureComponent {
           });
           this.setState({
             visible: false,
-            chnageType: false,
+            changeType: false,
+            title: '',
+            author: '河狸兽',
+            keyword: '',
+            content: '',
+            desc: '',
+            img_url: '',
+            origin: 0, // 0 原创，1 转载，2 混合
+            state: 1, // 文章发布状态 => 0 草稿，1 已发布
+            type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+            tags: '',
+            category: '',
+            tagsDefault: [],
+            categoryDefault: [],
           });
           this.handleSearch(this.state.pageNum, this.state.pageSize);
         } else {
