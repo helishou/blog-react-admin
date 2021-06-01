@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-26 20:17:55
+ * @LastEditTime : 2021-06-01 15:56:44
+ * @LastEditors  : helishou
+ * @Description  : 页脚
+ * @FilePath     : \src\layouts\Footer.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, { Fragment } from 'react';
 import { Layout, Icon } from 'antd';
 import GlobalFooter from '@/components/GlobalFooter';
@@ -8,15 +17,9 @@ const FooterView = () => (
     <GlobalFooter
       links={[
         {
-          key: 'Pro 首页',
-          title: 'Pro 首页',
-          href: 'https://github.com/helishou/blog-react',
-          blankTarget: true,
-        },
-        {
           key: 'github',
           title: <Icon type="github" />,
-          href: 'https://github.com/helishou/blog-react-admin',
+          href: 'https://github.com/helishou',
           blankTarget: true,
         },
         {
@@ -28,7 +31,7 @@ const FooterView = () => (
       ]}
       copyright={
         <Fragment>
-          Copyright <Icon type="copyright" /> helishou
+          Copyright <Icon type="copyright" /> @helishou
         </Fragment>
       }
     />
