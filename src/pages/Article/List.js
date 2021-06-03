@@ -193,7 +193,7 @@ class TableList extends PureComponent {
               <Divider type="vertical" />
               <Fragment>
                 <a
-                  href={`${domain}articleDetail?article_id=${record._id}`}
+                  href={`${domain}/article/${record._id}`}
                   target="_blank"
                   rel="noreferrer"
                 >

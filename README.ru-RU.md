@@ -1,3 +1,12 @@
+<!--
+ * @Author       : helishou
+ * @Date         : 2021-06-03 19:44:32
+ * @LastEditTime : 2021-06-03 19:44:33
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : \README.ru-RU.md
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+-->
 [English](./README.md) | [简体中文](./README.zh-CN.md) | Русский
 
 <h1 align="center">Ant Design Pro</h1>
