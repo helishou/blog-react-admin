@@ -192,11 +192,7 @@ class TableList extends PureComponent {
               </Fragment>
               <Divider type="vertical" />
               <Fragment>
-                <a
-                  href={`${domain}/article/${record._id}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={`${domain}/article/${record._id}`} target="_blank" rel="noreferrer">
                   详情
                 </a>
               </Fragment>
@@ -303,7 +299,7 @@ class TableList extends PureComponent {
             visible: false,
             changeType: false,
             title: '',
-            author: 'helishou',
+            author: '河狸兽',
             keyword: '',
             content: '',
             desc: '',
@@ -684,6 +680,11 @@ class TableList extends PureComponent {
                 placeholder="标题/描述"
                 value={this.state.searchKeyword}
                 onChange={this.handleChangeSearchKeyword}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') {
+                    this.handleSearch();
+                  }
+                }}
               />
             </FormItem>
 
@@ -705,7 +706,7 @@ class TableList extends PureComponent {
                 type="primary"
                 icon="search"
               >
-                Search
+                搜索
               </Button>
             </span>
             <span>

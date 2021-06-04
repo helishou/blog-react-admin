@@ -214,6 +214,11 @@ class TableList extends PureComponent {
             placeholder="标签名"
             value={this.state.keyword}
             onChange={this.handleChangeKeyword}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                this.handleSearch();
+              }
+            }}
           />
         </FormItem>
 
@@ -224,7 +229,7 @@ class TableList extends PureComponent {
             type="primary"
             icon="search"
           >
-								Search
+            搜索
           </Button>
         </span>
         <span>
@@ -233,7 +238,7 @@ class TableList extends PureComponent {
             onClick={this.showModal}
             type="primary"
           >
-								新增
+            新增
           </Button>
         </span>
       </Col>

@@ -198,6 +198,11 @@ class TableList extends PureComponent {
                 placeholder="用户名"
                 value={this.state.keyword}
                 onChange={this.handleChangeKeyword}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') {
+                    this.handleSearch();
+                  }
+                }}
               />
             </FormItem>
 

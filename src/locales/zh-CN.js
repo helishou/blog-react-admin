@@ -59,7 +59,7 @@ export default {
   'menu.tag': '标签',
   'menu.tag.list': '标签列表',
   'menu.otherUser': '用户管理',
-  'menu.otherUser.list': '用户列表',
+  'menu.list': '用户列表',
   'menu.message': '留言',
   'menu.message.list': '留言列表',
   'menu.link': '友情链接',

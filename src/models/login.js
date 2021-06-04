@@ -22,6 +22,7 @@ export default {
         response.currentAuthority = response.data.name || 'admin';
         response.status = 'ok';
         response.type = 'account';
+        console.log(response)
         yield put({
           type: 'changeLoginStatus',
           payload: response,

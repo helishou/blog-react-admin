@@ -15,7 +15,7 @@ export default [
     path: '/',
     component: '../layouts/BasicLayout',
     Routes: ['src/pages/Authorized'],
-    authority: ['admin', 'user', 'baozishu', 'helishou','河狸兽'],
+    authority: ['admin', 'user', 'baozishu', 'helishou', '河狸兽'],
     routes: [
       // dashboard
       { path: '/', redirect: '/user/login' },
@@ -33,16 +33,10 @@ export default [
         // ],
       },
       {
-        path: '/otherUser',
-        name: 'otherUser',
         icon: 'usergroup-add',
-        routes: [
-          {
-            path: '/otherUser/list',
-            name: 'list',
-            component: './OtherUser/List',
-          },
-        ],
+        path: '/otherUser/list',
+        name: 'list',
+        component: './OtherUser/List',
       },
       {
         path: '/article',
@@ -121,18 +115,18 @@ export default [
       //     },
       //   ],
       // },
-      {
-        path: '/project',
-        name: 'project',
-        icon: 'clock-circle',
-        // routes: [
-        //   {
-        //     path: '/project/list',
-        //     name: 'list',
-        component: './Project/List',
-        //   },
-        // ],
-      },
+      // {
+      //   path: '/project',
+      //   name: 'project',
+      //   icon: 'clock-circle',
+      //   // routes: [
+      //   //   {
+      //   //     path: '/project/list',
+      //   //     name: 'list',
+      //   component: './Project/List',
+      //   //   },
+      //   // ],
+      // },
       {
         name: 'exception',
         icon: 'warning',

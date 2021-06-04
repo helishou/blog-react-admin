@@ -246,6 +246,11 @@ class TableList extends PureComponent {
                 placeholder="留言内容"
                 value={this.state.keyword}
                 onChange={this.handleChangeKeyword}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') {
+                    this.handleSearch();
+                  }
+                }}
               />
             </FormItem>
 
@@ -266,7 +271,7 @@ class TableList extends PureComponent {
                 type="primary"
                 icon="search"
               >
-                Search
+                搜索
               </Button>
             </span>
           </Col>
