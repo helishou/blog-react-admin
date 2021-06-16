@@ -45,7 +45,6 @@ class ArticleComponent extends React.Component {
         },
       });
     }).then(res => {
-      // console.log('res :', res);
       if (res.code === 0) {
         this.setState({
           loading: false,
@@ -77,7 +76,6 @@ class ArticleComponent extends React.Component {
         },
       });
     }).then(res => {
-      // console.log('res :', res);
       if (res.code === 0) {
         this.setState({
           loading: false,
@@ -117,29 +115,6 @@ class ArticleComponent extends React.Component {
       );
     }
     const { changeType } = this.props;
-    // console.log('render', this.props);
-    // let originDefault = '原创';
-    // let stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    // let typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 项目
-    // let categoryDefault = [];
-    // let tagsDefault = [];
-    // if (changeType) {
-    //   originDefault = this.props.origin === 0 ? '原创' : '';
-    //   stateDefault = this.props.state ? '已发布' : '草稿';
-    //   typeDefault =
-    //     this.props.type === 1 ? '普通文章' : this.props.type === 2 ? '简历' : '管理员介绍';
-    //   categoryDefault = this.props.categoryDefault;
-    //   tagsDefault = this.props.tagsDefault;
-    // } else {
-    //   originDefault = '原创';
-    //   stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    //   categoryDefault = [];
-    //   tagsDefault = [];
-    // }
-    // console.log('originDefault :', originDefault)
-    // console.log('stateDefault :', stateDefault)
-    // console.log('categoryDefault :', categoryDefault)
-    // console.log('tagsDefault :', tagsDefault)
     const { TextArea } = Input;
     const normalCenter = {
       textAlign: 'center',
@@ -279,7 +254,7 @@ class ArticleComponent extends React.Component {
             style={{ marginBottom: 20 }}
             size="large"
             rows={6}
-            autosize={{ minRows: 15 }}
+            autoSize={{ minRows: 15 }}
             placeholder="文章内容，支持 markdown 格式"
             name="content"
             value={this.props.content}
