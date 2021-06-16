@@ -115,18 +115,18 @@ class Welecome extends PureComponent {
         <div
           style={{
             position: 'relative',
-            maxHeight: '400px',
-            maxWidth: '1000px',
+            width: '100%',
+            height: '60vh',
             boxShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)',
             overflow: 'hidden',
             borderRadius: '10px',
-            margin: '0 auto',
+            margin: '10px auto',
           }}
         >
           <img
             style={{
-              height: '400px',
-              width: '1000px',
+              height: '100%',
+              width: '100%',
               objectFit: 'cover',
             }}
             src={this.image}

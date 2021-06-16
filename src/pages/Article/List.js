@@ -41,7 +41,7 @@ class TableList extends PureComponent {
       img_url: '',
       origin: 0, // 0 原创，1 转载，2 混合
       state: 1, // 文章发布状态 => 0 草稿，1 已发布
-      type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+      type: 1, // 文章类型 => 1: 普通文章，2: 项目
       tags: '',
       category: '',
       tagsDefault: [],
@@ -71,11 +71,18 @@ class TableList extends PureComponent {
           dataIndex: 'keyword',
           render: arr => (
             <span>
-              {arr.map(item => (
-                <span color="magenta" key={item}>
-                  {item}
-                </span>
-              ))}
+              {arr[0]
+                .split(' ')
+                .slice(0, 5)
+                .map(item => {
+                  if (item) {
+                    return (
+                      <Tag color="magenta" key={item}>
+                        {item}
+                      </Tag>
+                    );
+                  }
+                })}
             </span>
           ),
         },
@@ -306,7 +313,7 @@ class TableList extends PureComponent {
             img_url: '',
             origin: 0, // 0 原创，1 转载，2 混合
             state: 1, // 文章发布状态 => 0 草稿，1 已发布
-            type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+            type: 1, // 文章类型 => 1: 普通文章，2: 项目
             tags: '',
             category: '',
             tagsDefault: [],
@@ -357,7 +364,7 @@ class TableList extends PureComponent {
             img_url: '',
             origin: 0, // 0 原创，1 转载，2 混合
             state: 1, // 文章发布状态 => 0 草稿，1 已发布
-            type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+            type: 1, // 文章类型 => 1: 普通文章，2: 项目
             tags: '',
             category: '',
             tagsDefault: [],
@@ -577,14 +584,14 @@ class TableList extends PureComponent {
         visible: true,
         changeType: false,
         title: '',
-        author: 'helishou',
+        author: '河狸兽',
         keyword: '',
         content: '',
         desc: '',
         img_url: '',
         origin: 0, // 0 原创，1 转载，2 混合
         state: 1, // 文章发布状态 => 0 草稿，1 已发布
-        type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+        type: 1, // 文章类型 => 1: 普通文章，2: 项目
         tags: '',
         category: '',
       });
@@ -598,6 +605,7 @@ class TableList extends PureComponent {
   handleCancel = e => {
     this.setState({
       visible: false,
+      loading: false,
     });
   };
 
@@ -752,7 +760,6 @@ class TableList extends PureComponent {
               size="middle"
               pagination={pagination}
               loading={this.state.loading}
-              pagination={pagination}
               rowKey={record => record._id}
               columns={this.state.columns}
               bordered
