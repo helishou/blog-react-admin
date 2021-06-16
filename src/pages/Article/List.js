@@ -572,6 +572,7 @@ class TableList extends PureComponent {
             category,
             tagsDefault: tagsArr,
             categoryDefault: categoryArr,
+            type:res.data.type,
           });
         } else {
           notification.error({

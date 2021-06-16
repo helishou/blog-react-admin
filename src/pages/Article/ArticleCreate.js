@@ -170,7 +170,7 @@ class ArticleCreate extends React.Component {
 
   handleCategoryChange(value) {
     const category = value.join();
-    console.log('category :', category);
+    // console.log('category :', category);
     this.setState({
       categoryDefault: value,
       category,
@@ -190,7 +190,7 @@ class ArticleCreate extends React.Component {
   }
 
   handleChangeType(value) {
-    console.log('type :', value);
+    // console.log('type :', value);
     this.setState({
       type: value,
     });

@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-26 20:17:55
+ * @LastEditTime : 2021-06-16 21:18:10
+ * @LastEditors  : helishou
+ * @Description  : user的model
+ * @FilePath     : \src\models\user.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import { query as queryAdmin, queryCurrent } from '@/services/user';
 
 export default {
@@ -42,7 +51,7 @@ export default {
       };
     },
     saveCurrentUser(state, action) {
-      console.log('saveCurrentUser');
+      // console.log('saveCurrentUser');
       return {
         ...state,
         currentUser: action.payload || {},
