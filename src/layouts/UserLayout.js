@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-27 19:38:42
+ * @LastEditTime : 2021-06-16 21:26:04
+ * @LastEditors  : helishou
+ * @Description  : 登陆页面的layout
+ * @FilePath     : \src\layouts\UserLayout.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, { Fragment } from 'react';
 import { formatMessage } from 'umi/locale';
 import Link from 'umi/link';
@@ -27,7 +36,7 @@ const links = [
 
 const copyright = (
   <Fragment>
-    Copyright <Icon type="copyright" /> 2018 蚂蚁金服体验技术部出品
+    Copyright <Icon type="copyright" /> 2021 河狸兽
   </Fragment>
 );
 

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-26 20:17:55
- * @LastEditTime : 2021-06-01 15:56:44
+ * @LastEditTime : 2021-06-16 21:27:28
  * @LastEditors  : helishou
  * @Description  : 页脚
  * @FilePath     : \src\layouts\Footer.js
@@ -18,7 +18,7 @@ const FooterView = () => (
       links={[
         {
           key: 'github',
-          title: <Icon type="github" />,
+          title: <Icon type="github" title='github源码' />,
           href: 'https://github.com/helishou',
           blankTarget: true,
         },
