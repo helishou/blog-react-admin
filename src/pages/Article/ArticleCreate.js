@@ -1,11 +1,12 @@
 import React from 'react';
-import { Input, Select, Button, notification } from 'antd';
+import { Input, Select, Button, notification, Affix } from 'antd';
 import { connect } from 'dva';
 import SimpleMDE from 'simplemde';
 import marked from 'marked';
 import highlight from 'highlight.js';
 import 'simplemde/dist/simplemde.min.css';
 import './style.less';
+import openWindow from '../../utils/openWindow';
 
 @connect(({ article, tag, category }) => ({
   article,
@@ -29,7 +30,7 @@ class ArticleCreate extends React.Component {
       img_url: '',
       origin: 0, // 0 原创，1 转载，2 混合
       state: 1, // 文章发布状态 => 0 草稿，1 已发布
-      type: 1, // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+      type: 1, // 文章类型 => 1: 普通文章，2: 项目
       tags: '',
       category: '',
       tagsDefault: [],
@@ -133,7 +134,7 @@ class ArticleCreate extends React.Component {
           loading: false,
           chnageType: false,
         });
-        this.props.history.push("/article/list");
+        this.props.history.push('/article/list');
         // this.handleSearch(this.state.pageNum, this.state.pageSize);
       } else {
         notification.error({
@@ -259,6 +260,11 @@ class ArticleCreate extends React.Component {
     });
   };
 
+  // 选择图片
+  selectImage = () => {
+    openWindow('http://www.netbian.com/erciyuan/index_8.htm', '右键复制图片地址', 1080, 640);
+  };
+
   render() {
     const { tagList } = this.props.tag;
     const { categoryList } = this.props.category;
@@ -284,7 +290,7 @@ class ArticleCreate extends React.Component {
     // const { changeType } = this.props;
     let originDefault = '原创';
     let stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    const typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+    const typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 项目
     let categoryDefault = [];
     let tagsDefault = [];
     // if (changeType) {
@@ -342,15 +348,24 @@ class ArticleCreate extends React.Component {
           value={this.state.desc}
           onChange={this.handleChange}
         />
-        <Input
-          style={normalCenter}
-          addonBefore="封面链接"
-          size="large"
-          placeholder="封面链接"
-          name="img_url"
-          value={this.state.img_url}
-          onChange={this.handleChange}
-        />
+        <div>
+          <Input
+            style={{ ...normalCenter, width: '70%' }}
+            addonBefore="封面链接"
+            size="large"
+            placeholder="封面链接"
+            name="img_url"
+            value={this.state.img_url}
+            onChange={this.handleChange}
+          />
+          <Button
+            onClick={this.selectImage}
+            size="large"
+            style={{ margin: '0px 10px', fontSize: '14px' }}
+          >
+            选择图片
+          </Button>
+        </div>
 
         <Select
           style={{ width: 200, marginBottom: 20 }}
@@ -369,10 +384,10 @@ class ArticleCreate extends React.Component {
           defaultValue={typeDefault}
           onChange={this.handleChangeType}
         >
-          {/* 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍 */}
+          {/* 文章类型 => 1: 普通文章，2: 项目 */}
           <Select.Option value="1">普通文章</Select.Option>
-          <Select.Option value="2">简历</Select.Option>
-          <Select.Option value="3">管理员介绍</Select.Option>
+          <Select.Option value="2">项目</Select.Option>
+          {/* <Select.Option value="3">管理员介绍</Select.Option> */}
         </Select>
 
         <Select
@@ -409,7 +424,7 @@ class ArticleCreate extends React.Component {
         >
           {categoryChildren}
         </Select>
-        <div>
+        <Affix offsetTop={100}>
           <Button
             onClick={() => {
               this.handleSubmit();
@@ -420,7 +435,7 @@ class ArticleCreate extends React.Component {
           >
             提交
           </Button>
-        </div>
+        </Affix>
 
         <div title="添加与修改文章" width="1200px">
           <textarea id="editor" style={{ marginBottom: 20, width: 800 }} size="large" rows={6} />

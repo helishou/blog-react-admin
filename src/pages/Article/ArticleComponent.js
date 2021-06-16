@@ -1,6 +1,7 @@
 import React from 'react';
-import { Input, Modal, Select, notification } from 'antd';
+import { Input, Modal, Select, notification, Button } from 'antd';
 import { connect } from 'dva';
+import openWindow from '../../utils/openWindow';
 
 @connect(({ article, tag, category }) => ({
   article,
@@ -89,6 +90,11 @@ class ArticleComponent extends React.Component {
     });
   };
 
+  // 选择图片
+  selectImage = () => {
+    openWindow('http://www.netbian.com/erciyuan/index_8.htm', '右键复制图片地址', 1080, 640);
+  };
+
   render() {
     const { tagList } = this.props.tag;
     const { categoryList } = this.props.category;
@@ -111,10 +117,10 @@ class ArticleComponent extends React.Component {
       );
     }
     const { changeType } = this.props;
-    console.log('render', this.props);
+    // console.log('render', this.props);
     // let originDefault = '原创';
     // let stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    // let typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
+    // let typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 项目
     // let categoryDefault = [];
     // let tagsDefault = [];
     // if (changeType) {
@@ -184,16 +190,24 @@ class ArticleComponent extends React.Component {
             value={this.props.desc}
             onChange={this.props.handleChangeDesc}
           />
-          <Input
-            style={normalCenter}
-            addonBefore="封面链接"
-            size="large"
-            placeholder="封面链接"
-            name="img_url"
-            value={this.props.img_url}
-            onChange={this.props.handleChangeImgUrl}
-          />
-
+          <div>
+            <Input
+              style={(normalCenter, { width: '70%' })}
+              addonBefore="封面链接"
+              size="large"
+              placeholder="封面链接"
+              name="img_url"
+              value={this.props.img_url}
+              onChange={this.props.handleChangeImgUrl}
+            />
+            <Button
+              onClick={this.selectImage}
+              size="large"
+              style={{ marginLeft: '10px', fontSize: '14px' }}
+            >
+              选择图片
+            </Button>
+          </div>
           <Select
             style={{ width: 200, marginTop: 20, marginBottom: 20 }}
             placeholder="选择发布状态"
@@ -211,10 +225,8 @@ class ArticleComponent extends React.Component {
             value={String(this.props.type)}
             onChange={this.props.handleChangeType}
           >
-            {/* 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍 */}
             <Select.Option value="1">普通文章</Select.Option>
-            <Select.Option value="2">简历</Select.Option>
-            <Select.Option value="3">管理员介绍</Select.Option>
+            <Select.Option value="2">项目</Select.Option>
           </Select>
 
           <Select
@@ -249,6 +261,20 @@ class ArticleComponent extends React.Component {
           >
             {categoryChildren}
           </Select>
+          <Button
+            type="primary"
+            style={{
+              // display:'block',
+              marginLeft:'10px'
+              // position: 'fixed',
+              // left: '50%',
+              // top: '10%',
+              // zIndex: '999',
+            }}
+            onClick={this.props.handleOk}
+          >
+            提交
+          </Button>
           <TextArea
             style={{ marginBottom: 20 }}
             size="large"
