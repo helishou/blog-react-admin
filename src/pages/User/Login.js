@@ -40,8 +40,9 @@ class LoginPage extends Component {
     });
 
   handleSubmit = (err, values) => {
-    // console.log('values :', values)
+    console.log('values :', values)
     const { type } = this.state;
+
     if (!err) {
       const { dispatch } = this.props;
       dispatch({
@@ -84,33 +85,14 @@ class LoginPage extends Component {
               !submitting &&
               this.renderMessage('账户或密码错误（user/123456）')}
             {/* <UserName name="userName" placeholder="admin/user" /> */}
-            <UserName name="email" placeholder="user" />
+            <UserName name="email" placeholder="user" defaultValue='user' />
             <Password
               name="password"
               placeholder="123456"
-              onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
+              defaultValue='123456'
+              // onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
           </Tab>
-          {/* <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
-            {login.status === 'error' &&
-              login.type === 'account' &&
-              !submitting &&
-              this.renderMessage('账户或密码错误（admin/888888）')}
-            <UserName name="userName" placeholder="admin/user" />
-            <Password
-              name="password"
-              placeholder="888888/123456"
-              onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
-            />
-          </Tab> */}
-          {/* <Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>
-            {login.status === 'error' &&
-              login.type === 'mobile' &&
-              !submitting &&
-              this.renderMessage('验证码错误')}
-            <Mobile name="mobile" />
-            <Captcha name="captcha" countDown={120} onGetCaptcha={this.onGetCaptcha} />
-          </Tab> */}
           <div>
             <Checkbox checked={autoLogin} onChange={this.changeAutoLogin}>
               <FormattedMessage id="app.login.remember-me" />
@@ -126,11 +108,11 @@ class LoginPage extends Component {
             <FormattedMessage id="app.login.sign-in-with" />
             <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
             <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
-            <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
-            <Link className={styles.register} to="/User/Register">
+            <Icon type="weibo-circle" className={styles.icon} theme="outlined" /> */}
+          {/* <Link className={styles.register} to="/User/Register">
               <FormattedMessage id="app.login.signup" />
-            </Link>
-          </div> */}
+            </Link> */}
+          {/* </div> */}
         </Login>
       </div>
     );

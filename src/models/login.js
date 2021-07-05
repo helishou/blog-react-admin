@@ -18,11 +18,11 @@ export default {
       if (!response) {
         return;
       }
-      if (response.code === 0) {
+      if (response.code) {
         response.currentAuthority = response.data.name || 'admin';
         response.status = 'ok';
         response.type = 'account';
-        console.log(response)
+        // console.log(response)
         yield put({
           type: 'changeLoginStatus',
           payload: response,
@@ -30,7 +30,7 @@ export default {
       }
 
       // Login successfully
-      if (response.code === 0) {
+      if (response.code ) {
         reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
@@ -48,7 +48,7 @@ export default {
             return;
           }
         }
-        console.log('redirect :', redirect);
+        // console.log('redirect :', redirect);
 
         yield put(routerRedux.replace('/welcome'));
       }
@@ -56,7 +56,7 @@ export default {
 
     *login({ payload }, { call, put }) {
       const response = yield call(fakeAccountLogin, payload);
-      console.log('response :', response);
+      // console.log('response :', response);
       yield put({
         type: 'changeLoginStatus',
         payload: response,
