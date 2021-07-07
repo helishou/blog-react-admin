@@ -98,7 +98,8 @@ export default {
           currentAuthority: 'guest',
         },
       });
-      yield call(logout, {});
+      const response = yield call(logout, {});
+      console.log(response)
       reloadAuthorized();
       yield put(
         routerRedux.push({

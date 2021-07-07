@@ -303,10 +303,9 @@ export async function loginAdmin(params) {
   });
 }
 
-export async function logout(params) {
+export async function logout() {
   return request('/api/logout', {
     method: 'POST',
-    body: params,
   });
 }
 
