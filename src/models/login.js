@@ -15,10 +15,11 @@ export default {
   effects: {
     *loginAdmin({ payload }, { call, put }) {
       const response = yield call(loginAdmin, payload);
+      // console.log(response)
       if (!response) {
         return;
       }
-      if (response.code) {
+      if (response) {
         response.currentAuthority = response.data.name || 'admin';
         response.status = 'ok';
         response.type = 'account';
@@ -30,7 +31,7 @@ export default {
       }
 
       // Login successfully
-      if (response.code ) {
+      if (response ) {
         reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
