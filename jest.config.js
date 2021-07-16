@@ -8,5 +8,5 @@
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 module.exports = {
-  testURL: 'http://wangxinyang.xyz',
+  testURL: 'https://wangxinyang.xyz',
 };
